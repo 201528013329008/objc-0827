@@ -9,15 +9,35 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>getter-setter.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>kk.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>self方法传递.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>匿名对象.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>对象作为方法传递.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>对象作为返回值.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>电饭锅.xcscheme</key>
 		<dict>
@@ -32,6 +52,26 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>96284D851D6E7E3E00E566EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96284D9C1D6EDD5600E566EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96284DAD1D72794A00E566EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96284DBB1D73C94800E566EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>963E3F0D1D6D70E6002EF988</key>
 		<dict>
 			<key>primary</key>

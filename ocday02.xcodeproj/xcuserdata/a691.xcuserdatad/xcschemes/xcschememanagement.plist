@@ -29,6 +29,16 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>多态.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>实例变量修饰符.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>对象作为方法传递.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -38,6 +48,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>构造方法.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>电饭锅.xcscheme</key>
 		<dict>
@@ -68,6 +83,21 @@
 			<true/>
 		</dict>
 		<key>96284DBB1D73C94800E566EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96284DCF1D750E2C00E566EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96284DE91D75297300E566EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96284DFA1D7704EC00E566EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

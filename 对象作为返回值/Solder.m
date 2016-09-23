@@ -9,13 +9,14 @@
 #import "Solder.h"
 
 @implementation Solder
--(void)fire :(Gun*)gun clip:(Clip*)cl{
-    if (gun!=nil&&cl!=nil) {
+-(void)fire :(Gun*)gun clip:(Clip*)clip{
+    if (gun!=nil&&clip!=nil) {
         NSLog(@"人开枪");
 //        [gun shoot:cl ];//只要保持两个行参一致即可，随便名字。cl这个位置会拿到clip这个对象
-        [cl setBullet:30];
+//        [cl setBullet:30];
+        clip.bullet = 30;
         
-        [gun shoot:cl :[cl bullet]];
+        [gun shoot:clip :clip.bullet];
        
     }
 }

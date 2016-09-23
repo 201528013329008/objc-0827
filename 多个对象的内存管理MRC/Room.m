@@ -9,5 +9,8 @@
 #import "Room.h"
 
 @implementation Room
+-(void)dealloc{
+    NSLog(@"%s", __func__);
 
+    [super dealloc];}
 @end

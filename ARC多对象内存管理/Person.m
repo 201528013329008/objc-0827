@@ -11,8 +11,8 @@
 @implementation Person
 -(void)dealloc{
     
-    [_dog release];
+//    [_dog release];
     NSLog(@"%s",__func__);
-    [super dealloc];
+//    [super dealloc];
 }
 @end

@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Person : NSObject
+@property int age;
 
++(instancetype)person;
++(instancetype)personWithAge:(int)age;
 @end

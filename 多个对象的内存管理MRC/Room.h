@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Person.h"
 @interface Room : NSObject
 
+@property int no;
+-(void)dealloc;
 @end

@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Person.h"
 @interface Student : Person
+@property NSString* no;
+-(instancetype)initWithAge:(int)age andName:(NSString *)name andNo:(NSString*)no;
+
 
 @end

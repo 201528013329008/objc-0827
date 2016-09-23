@@ -7,7 +7,8 @@
 //
 
 #import "LinkHome.h"
-
+#import "Student.h"
 @implementation LinkHome
-
+-(void)helpStudentFind:(Student *)student{
+    NSLog(@"帮学生找");}
 @end

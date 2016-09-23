@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+//#import "StudentProtocal.h"
+//#import "Student.h"
+@protocol StudentProtocal;
+//先在.h 中导入这个协议
+//然后在.m中导入具体所在的类
 
-@interface LoveHome : NSObject
+@interface LoveHome : NSObject<StudentProtocal>
 
 @end

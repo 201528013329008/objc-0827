@@ -7,7 +7,12 @@
 //
 
 #import "Person.h"
-
+#import "Dog.h"
 @implementation Person
-
+-(void)dealloc{
+    
+    [_dog release];
+    NSLog(@"%s",__func__);
+    [super dealloc];
+}
 @end

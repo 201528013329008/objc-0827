@@ -18,7 +18,22 @@
 //        _no=10;
 //    }
 //    return self;}
-- ( NSString *)description{
-    NSString* str = [NSString stringWithFormat:@"age=%i,name=%@",self.age,self.name];
-    return str;}
+//- ( NSString *)description{
+//    NSString* str = [NSString stringWithFormat:@"age=%i,name=%@",self.age,self.name];
+//    return str;}
+-(instancetype)initWithAge:(int)age andName:(NSString *)name andNo:(NSString *)no{
+    if(self = [super initWithAge:age andName:name])
+    {self.no = no;}
+               return self;}
+//    父类定义的变量最好让父类操作，这样的话代码复用高，扩展的更清晰,事实上和下面的效果一样，根据不同的场景自己定义
+
+//-(instancetype)initWithAge:(int)age andName:(NSString *)name andNo:(NSString *)no{
+//    if (self = [super init]) {
+//        self.age = age;
+//        self.name= name;
+//        self.no = no;
+//    }
+//    return self;}
+-(NSString *)description{
+    return [NSString stringWithFormat:@"age %i,name%@,no%@",self.age,self.name,self.no];}
 @end

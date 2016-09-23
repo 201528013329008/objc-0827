@@ -9,5 +9,10 @@
 #import "Person.h"
 
 @implementation Person
++(instancetype)person{
+    return [[Person alloc]init];}
+-(void)dealloc{
+    NSLog(@"%s",__func__);
 
+}
 @end

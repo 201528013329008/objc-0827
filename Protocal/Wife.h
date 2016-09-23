@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface Wife : NSObject
+#import "WifeCondition.h"
+@interface Wife : NSObject<WifeCondition>
 
 @end

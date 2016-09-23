@@ -10,4 +10,7 @@
 
 @protocol WifeCondition <NSObject>
 
+-(void)cooking;
+-(void)washing;
+-(void)job;
 @end

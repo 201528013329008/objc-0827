@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Person : NSObject
-
+//strong相当于mrc众的retain
+@property ( nonatomic,assign) int age;
++(instancetype)person;
+-(void)dealloc;
 @end

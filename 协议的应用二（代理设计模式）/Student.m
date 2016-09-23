@@ -7,7 +7,14 @@
 //
 
 #import "Student.h"
-
+#import "LinkHome.h"
+//#import "StudentProtocal.h"x
 @implementation Student
-
+-(void)findHouse{
+    NSLog(@"学生想找房子");
+//          通知代理帮他找
+          if([self.delegate respondsToSelector:@selector(helpStudentFind:)])
+       
+              [ self.delegate helpStudentFind:self];
+              }
 @end

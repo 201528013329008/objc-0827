@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class Dog;
 @interface Person : NSObject
 
+@property ( nonatomic, retain)Dog* dog;
 @end

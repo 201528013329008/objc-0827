@@ -7,7 +7,7 @@
 //
 
 #import "Bone.h"
-
+#import "Dog.h"
 @implementation Bone
 
 @end

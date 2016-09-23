@@ -11,6 +11,7 @@
 @interface Gun : NSObject
 
 {
+
 @public
     Clip *clip;
 }

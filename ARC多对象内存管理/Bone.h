@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Dog.h"
+@class Dog;
 @interface Bone : NSObject
-
+@property(nonatomic,strong) Dog* dog;
 @end

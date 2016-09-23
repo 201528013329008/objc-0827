@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LinkHome : NSObject
+//#import "Student.h"在.m中导入
+
+@protocol StudentProtocal;//要遵循的协议
+
+
+@interface LinkHome : NSObject<StudentProtocal>
+
 
 @end

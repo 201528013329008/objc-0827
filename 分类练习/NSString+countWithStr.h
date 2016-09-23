@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (countWithStr)
+-(int)countWithStr ;
 
 @end

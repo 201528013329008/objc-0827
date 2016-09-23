@@ -12,14 +12,20 @@
 
 int main(int argc, const char * argv[]) {
    
-    Person *p1 = [[Person alloc] init];
-    [p1 initWithAge:30 andName:@"pppp"];
-    NSLog(@"%@",p1);
+//    Person *p1 = [[Person alloc] init];
+//    id p3=[p1 initWithAge:30 andName:@"pppp"];
+//    NSLog(@"%@",p3);
+    Person *p1 = [[Person alloc] initWithAge:30 andName:@"ppppp"];
+     NSLog(@"%@",p1);
+    //或者 Person *p1 = [[Person alloc] init];
+    // id p3=[p1 initWithAge:30 andName:@"pppp"];
+    // NSLog(@"%@",p3);
     
-    Student *p2= [[Student alloc]init];
-    [p2 initWithAge:40 andName:@"oooo"];
+    Student *p2= [[Student alloc] initWithAge:50 andName:@"oooooo" andNo:@"llllll"];
     NSLog(@"%@",p2);
-    
+//    只能用id，不能用Student，不能静态分配给一个临时的变量（后面的方法不是new）
+//    有返回值的方法调用时最好赋值给一个指针类型的变量
+   
 //    NSString*str = [[Person alloc] init];
 //    NSUInteger length = [str length];
 //    NSLog(@"length= %lu",length);

@@ -9,5 +9,6 @@
 #import "Car.h"
 
 @implementation Car
-
+-(void)run{
+    NSLog(@"pao");}
 @end

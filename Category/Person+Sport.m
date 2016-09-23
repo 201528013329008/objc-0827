@@ -9,5 +9,6 @@
 #import "Person+Sport.h"
 
 @implementation Person (Sport)
-
+-(void)playfootbool{
+    NSLog(@"%s",__func__);}
 @end

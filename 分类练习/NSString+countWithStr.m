@@ -9,5 +9,17 @@
 #import "NSString+countWithStr.h"
 
 @implementation NSString (countWithStr)
+-(int)countWithStr{
+  
+        int count;
+        for (int i=0; i< self.length; ++i ) {
+            unichar c = [self characterAtIndex: i ];
+            if (c >='0'&&c <'9') {
+                count++;
+            }
+        }
+        return count;
+        
+    }
 
 @end

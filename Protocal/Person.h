@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Wife.h"
 @interface Person : NSObject
-
+@property ( nonatomic, strong)Wife <WifeCondition>* wife;
+-(void)show;
 @end

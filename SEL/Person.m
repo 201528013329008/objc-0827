@@ -10,4 +10,10 @@
 
 @implementation Person
 
+-(void)makeObject:(id)obj andSel:(SEL)sel{
+    [obj performSelector:sel];
+}
+-(void)sendMessageWithNumber:(NSString *)number andContent:(NSString *)content{
+    NSLog(@"%@,%@",number,content);}
 @end
+

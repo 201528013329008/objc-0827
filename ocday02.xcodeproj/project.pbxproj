@@ -68,6 +68,8 @@
 		96284ECF1D87A70400E566EF /* LinkHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 96284ECE1D87A70400E566EF /* LinkHome.m */; };
 		96284ED21D87E96A00E566EF /* LoveHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 96284ED11D87E96A00E566EF /* LoveHome.m */; };
 		963E3F111D6D70E6002EF988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963E3F101D6D70E6002EF988 /* main.m */; };
+		96835C291D9558D800AAEF07 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 96835C281D9558D800AAEF07 /* main.c */; };
+		96835C471DA0AB8100AAEF07 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 96835C461DA0AB8100AAEF07 /* main.c */; };
 		9692AFDA1D6D4406002D740C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9692AFD91D6D4406002D740C /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -270,6 +272,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		96835C241D9558D800AAEF07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		96835C421DA0AB8100AAEF07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		9692AFC71D6D322E002D740C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,6 +461,10 @@
 		96284ED11D87E96A00E566EF /* LoveHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveHome.m; sourceTree = "<group>"; };
 		963E3F0E1D6D70E6002EF988 /* 结构体作对象属性 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "结构体作对象属性"; sourceTree = BUILT_PRODUCTS_DIR; };
 		963E3F101D6D70E6002EF988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96835C261D9558D800AAEF07 /* huawei */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = huawei; sourceTree = BUILT_PRODUCTS_DIR; };
+		96835C281D9558D800AAEF07 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		96835C441DA0AB8100AAEF07 /* agv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = agv; sourceTree = BUILT_PRODUCTS_DIR; };
+		96835C461DA0AB8100AAEF07 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		9692AFC91D6D322E002D740C /* ocday02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ocday02; sourceTree = BUILT_PRODUCTS_DIR; };
 		9692AFD71D6D4406002D740C /* 对象作为方法传递 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "对象作为方法传递"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9692AFD91D6D4406002D740C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -598,6 +622,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		963E3F0B1D6D70E6002EF988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96835C231D9558D800AAEF07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96835C411DA0AB8100AAEF07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -889,6 +927,22 @@
 			path = "结构体作对象属性";
 			sourceTree = "<group>";
 		};
+		96835C271D9558D800AAEF07 /* huawei */ = {
+			isa = PBXGroup;
+			children = (
+				96835C281D9558D800AAEF07 /* main.c */,
+			);
+			path = huawei;
+			sourceTree = "<group>";
+		};
+		96835C451DA0AB8100AAEF07 /* agv */ = {
+			isa = PBXGroup;
+			children = (
+				96835C461DA0AB8100AAEF07 /* main.c */,
+			);
+			path = agv;
+			sourceTree = "<group>";
+		};
 		9692AFC01D6D322E002D740C = {
 			isa = PBXGroup;
 			children = (
@@ -915,6 +969,8 @@
 				96284EC31D87880800E566EF /* 协议的应用二（代理设计模式） */,
 				961EFB2A1D8E886C00B105E9 /* c */,
 				961EFB3A1D8F86BA00B105E9 /* foundation(字符串操作) */,
+				96835C271D9558D800AAEF07 /* huawei */,
+				96835C451DA0AB8100AAEF07 /* agv */,
 				9692AFCA1D6D322E002D740C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -949,6 +1005,8 @@
 				96284EC21D87880800E566EF /* 协议的应用二（代理设计模式） */,
 				961EFB291D8E886C00B105E9 /* c */,
 				961EFB391D8F86BA00B105E9 /* foundation(字符串操作) */,
+				96835C261D9558D800AAEF07 /* huawei */,
+				96835C441DA0AB8100AAEF07 /* agv */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1338,6 +1396,40 @@
 			productReference = 963E3F0E1D6D70E6002EF988 /* 结构体作对象属性 */;
 			productType = "com.apple.product-type.tool";
 		};
+		96835C251D9558D800AAEF07 /* huawei */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96835C2C1D9558D800AAEF07 /* Build configuration list for PBXNativeTarget "huawei" */;
+			buildPhases = (
+				96835C221D9558D800AAEF07 /* Sources */,
+				96835C231D9558D800AAEF07 /* Frameworks */,
+				96835C241D9558D800AAEF07 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = huawei;
+			productName = huawei;
+			productReference = 96835C261D9558D800AAEF07 /* huawei */;
+			productType = "com.apple.product-type.tool";
+		};
+		96835C431DA0AB8100AAEF07 /* agv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96835C481DA0AB8100AAEF07 /* Build configuration list for PBXNativeTarget "agv" */;
+			buildPhases = (
+				96835C401DA0AB8100AAEF07 /* Sources */,
+				96835C411DA0AB8100AAEF07 /* Frameworks */,
+				96835C421DA0AB8100AAEF07 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = agv;
+			productName = agv;
+			productReference = 96835C441DA0AB8100AAEF07 /* agv */;
+			productType = "com.apple.product-type.tool";
+		};
 		9692AFC81D6D322E002D740C /* ocday02 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9692AFD01D6D322E002D740C /* Build configuration list for PBXNativeTarget "ocday02" */;
@@ -1501,6 +1593,12 @@
 					963E3F0D1D6D70E6002EF988 = {
 						CreatedOnToolsVersion = 7.1;
 					};
+					96835C251D9558D800AAEF07 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					96835C431DA0AB8100AAEF07 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					9692AFC81D6D322E002D740C = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -1557,6 +1655,8 @@
 				96284EC11D87880800E566EF /* 协议的应用二（代理设计模式） */,
 				961EFB281D8E886C00B105E9 /* c */,
 				961EFB381D8F86BA00B105E9 /* foundation(字符串操作) */,
+				96835C251D9558D800AAEF07 /* huawei */,
+				96835C431DA0AB8100AAEF07 /* agv */,
 			);
 		};
 /* End PBXProject section */
@@ -1773,6 +1873,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				963E3F111D6D70E6002EF988 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96835C221D9558D800AAEF07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96835C291D9558D800AAEF07 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96835C401DA0AB8100AAEF07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96835C471DA0AB8100AAEF07 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2134,6 +2250,34 @@
 			};
 			name = Release;
 		};
+		96835C2A1D9558D800AAEF07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96835C2B1D9558D800AAEF07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96835C491DA0AB8100AAEF07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96835C4A1DA0AB8100AAEF07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9692AFCE1D6D322E002D740C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2293,6 +2437,7 @@
 				961EFB2E1D8E886C00B105E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		961EFB3D1D8F86BA00B105E9 /* Build configuration list for PBXNativeTarget "foundation(字符串操作)" */ = {
 			isa = XCConfigurationList;
@@ -2301,6 +2446,7 @@
 				961EFB3F1D8F86BA00B105E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96284D8A1D6E7E3E00E566EF /* Build configuration list for PBXNativeTarget "对象作为返回值" */ = {
 			isa = XCConfigurationList;
@@ -2481,6 +2627,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		96835C2C1D9558D800AAEF07 /* Build configuration list for PBXNativeTarget "huawei" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96835C2A1D9558D800AAEF07 /* Debug */,
+				96835C2B1D9558D800AAEF07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96835C481DA0AB8100AAEF07 /* Build configuration list for PBXNativeTarget "agv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96835C491DA0AB8100AAEF07 /* Debug */,
+				96835C4A1DA0AB8100AAEF07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		9692AFC41D6D322E002D740C /* Build configuration list for PBXProject "ocday02" */ = {
 			isa = XCConfigurationList;

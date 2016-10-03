@@ -34,6 +34,11 @@
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
+		<key>agv.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
+		</dict>
 		<key>c.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -58,6 +63,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>7</integer>
+		</dict>
+		<key>huawei.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
 		</dict>
 		<key>kk.xcscheme</key>
 		<dict>
@@ -243,6 +253,16 @@
 			<true/>
 		</dict>
 		<key>963E3F0D1D6D70E6002EF988</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96835C251D9558D800AAEF07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96835C431DA0AB8100AAEF07</key>
 		<dict>
 			<key>primary</key>
 			<true/>

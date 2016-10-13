@@ -23,6 +23,7 @@ int main(int argc, const char * argv[]) {
     
     Student *p2= [[Student alloc] initWithAge:50 andName:@"oooooo" andNo:@"llllll"];
     NSLog(@"%@",p2);
+//    [p2 description];
 //    只能用id，不能用Student，不能静态分配给一个临时的变量（后面的方法不是new）
 //    有返回值的方法调用时最好赋值给一个指针类型的变量
    

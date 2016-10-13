@@ -35,5 +35,5 @@
 //    }
 //    return self;}
 -(NSString *)description{
-    return [NSString stringWithFormat:@"age %i,name%@,no%@",self.age,self.name,self.no];}
+    return [NSString stringWithFormat:@"age =%i,name=%@,no=%@",self.age,self.name,self.no];}
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
 
 int main(int argc, const char * argv[]) {
 //   NSString *s = @"ljy";
@@ -246,31 +247,61 @@ int main(int argc, const char * argv[]) {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 //    不可变是每次赋值都指向新的内存（不可以追加内存空间），创建新对象
     
-    NSString *str30 = @"ljy";
+    NSString *str30 = @"sdgf";
      str30 = @"lll";
-//    NSString *newStr30 = [str30 stringByReplacingOccurrencesOfString:@"l" withString:@"p"];
+//   NSString *newStr30 = [str30 stringByReplacingOccurrencesOfString:@"l" withString:@"p"];
     NSLog(@"%@",str30);
     
     
     
-    NSMutableString *str31= [NSMutableString new];
-    [str31 appendString:@"dsf"];
+//    NSMutableString *str31= [[NSMutableString alloc]init];创建方式好多
+    NSMutableString *str31 = [NSMutableString stringWithFormat:@"d"];
+    
+    [str31 setString:@"dsf"];
+    [str31 appendString:@"ll"];
+    
+    NSRange range18 = [str31 rangeOfString:@"dsf"];
+    [str31 insertString:@"++" atIndex:range18.location];
+  
+    NSRange range12 = [str31 rangeOfString:@"ds"];
+    [str31 replaceCharactersInRange:range12 withString:@"aa"];
+    
+   NSUInteger countt = [str31 replaceOccurrencesOfString:@"l" withString:@"n" options:0 range:NSMakeRange(0, str31.length)];//返回替换过的字符个数
+    
+//OC方法一般要求传入一个参数没有*就是枚举类型的，如果不想传入任何值可以传入0，依照系统默认的方式进行处理
+//    NSRange range13 = [str31 rangeOfString:@"++"];
+//    [str31 deleteCharactersInRange:range13];
+    
+//    [str31 release];
+    
+    
     NSLog(@"%@",str31);
+    NSLog(@"%lu",countt);
+    
+    
+    
+    
+//    不可变练习
+    NSString* str32 = @"haha";
+    [str32 stringByAppendingString:@"-----"];
+//   需要将追加的字符串返回才能看到- (NSString *)stringByAppendingString:(NSString *)aString;
+    NSLog(@"%@",str32);
+    
+    
+//    可变的话
+    NSMutableString *str33 = [[NSMutableString alloc] initWithFormat:@"haha"];
+    [str33 appendString:@"----"];//如果调用父类的方法那么不可变 stringByAppendingString，因为父类的方法有返回值  而不可变的类中的方法没有返回值，
+    NSLog(@"%@",str33);
+    
+    
+//    练习haha haha haha
+    NSMutableString *str35 = [[NSMutableString alloc]initWithFormat:@"haha"];
+    for (int i=0; i<2; i++) {
+       [str35 appendString:@"g"];
+    };
+    NSLog(@"%@",str35);
     
     
     
@@ -281,6 +312,125 @@ int main(int argc, const char * argv[]) {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+   //／／／／／／／／／／／／／／／不可变数组
+    //c中的数组只能存储一种数据类型，OC中可以多种
+    
+    NSArray *arr = [NSArray arrayWithObjects:@"1",@"2" ,nil];
+    NSLog(@"%@",arr);
+    
+    
+    Person*pp = [[Person alloc]init];
+    
+    NSObject *pppp = [[NSObject alloc]init];
+    
+    NSArray *arrp = [NSArray arrayWithObjects:pp,pppp,@"3", @"4",nil];
+
+    NSLog(@"%@",arrp);
+    NSLog(@"%lu",arrp.count);
+    NSLog(@"%@",arrp.description);
+    NSLog(@"%@",arrp.lastObject);
+    NSLog(@"%@",arrp.reverseObjectEnumerator);
+//    NSEnumerator *ns =arrp.sortedArrayHint;
+//    NSLog(@"%@",ns );
+//    NSArray *a = [[NSArray alloc]init];
+//    a =arrp.sortedArrayHint;
+//    NSLog(@"%@",a );
+    NSLog(@"%@",arrp[0]);
+    NSLog(@"%@",[arrp objectAtIndex:2]);
+    
+    if ([arrp containsObject:@"4"]) {
+        NSLog(@"yess");
+    }
+    
+    
+    //简写
+    
+//    NSString *sttttt =@"l";
+    NSArray *arrrrrr = @[@"1",@"2",@"3"];
+    
+    NSLog(@"%@",arrrrrr[1]);
+    
+    //常规遍历
+    for (int i=0; i<arrrrrr.count; i++){
+        NSLog(@"arrrrr[%i]= %@",i , arrrrrr[i]);
+    }
+    
+//    增强for，逐个取出敷值给obj
+    for (NSObject * obj in arrrrrr) {
+        NSLog(@"obj=%@",obj);
+    }
+    
+    
+    
+    
+//    使用OC数组迭代器来遍历
+    
+//    每取出一个元素，就调用一次block
+    
+//    每次调用block都会将当前取出的元素和对应的索引传递给我们
+    
+//    obj就是当前取出的元素，idx就是当前元素对应的索引
+    
+//    stop用于控制什么时候停止遍历（根据idx）
+    
+    
+    
+    [arrrrrr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSLog(@"obj=%@,idx= %lu",obj, idx);
+        if(idx ==1)
+            *stop = YES;
+    }];
+    
+    //可变的数组，自己接收  方便内存管理
+    
+//    NSMutableArray *arrm = [NSMutableArray ]
+    
+//     给nsarray中的所有对象（相同类型）发送消息   只能传递一个参数，多个参数只能用遍历
+    
+
+    
+    
+    Person*p1 = [[Person alloc]init];
+    Person*p2 = [[Person alloc]init];
+    Person*p3 = [[Person alloc]init];
+    
+    NSArray *selarr = @[p1,p2,p3];
+//    让所有对象执行方法
+//    1遍历
+    [selarr enumerateObjectsUsingBlock:^( Person *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj say];
+    }];
+//   2
+    [selarr makeObjectsPerformSelector:@selector(say)];
+    
+//    只能传递一个参数，多个参数需要遍历enumerateObjectsUsingBlock
+    [selarr makeObjectsPerformSelector:@selector(sayWithName:) withObject:@"ljy"];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
     
     
     

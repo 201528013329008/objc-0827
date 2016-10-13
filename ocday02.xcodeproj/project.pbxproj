@@ -68,6 +68,7 @@
 		96284ECF1D87A70400E566EF /* LinkHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 96284ECE1D87A70400E566EF /* LinkHome.m */; };
 		96284ED21D87E96A00E566EF /* LoveHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 96284ED11D87E96A00E566EF /* LoveHome.m */; };
 		963E3F111D6D70E6002EF988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963E3F101D6D70E6002EF988 /* main.m */; };
+		9677571E1DAC938D00C54544 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 9677571D1DAC938D00C54544 /* Person.m */; };
 		96835C291D9558D800AAEF07 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 96835C281D9558D800AAEF07 /* main.c */; };
 		96835C471DA0AB8100AAEF07 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 96835C461DA0AB8100AAEF07 /* main.c */; };
 		9692AFDA1D6D4406002D740C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9692AFD91D6D4406002D740C /* main.m */; };
@@ -461,6 +462,8 @@
 		96284ED11D87E96A00E566EF /* LoveHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoveHome.m; sourceTree = "<group>"; };
 		963E3F0E1D6D70E6002EF988 /* 结构体作对象属性 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "结构体作对象属性"; sourceTree = BUILT_PRODUCTS_DIR; };
 		963E3F101D6D70E6002EF988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9677571C1DAC938D00C54544 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		9677571D1DAC938D00C54544 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		96835C261D9558D800AAEF07 /* huawei */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = huawei; sourceTree = BUILT_PRODUCTS_DIR; };
 		96835C281D9558D800AAEF07 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		96835C441DA0AB8100AAEF07 /* agv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = agv; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -692,6 +695,8 @@
 			isa = PBXGroup;
 			children = (
 				961EFB3B1D8F86BA00B105E9 /* main.m */,
+				9677571C1DAC938D00C54544 /* Person.h */,
+				9677571D1DAC938D00C54544 /* Person.m */,
 			);
 			path = "foundation(字符串操作)";
 			sourceTree = "<group>";
@@ -1674,6 +1679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9677571E1DAC938D00C54544 /* Person.m in Sources */,
 				961EFB3C1D8F86BA00B105E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2635,6 +2641,7 @@
 				96835C2B1D9558D800AAEF07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96835C481DA0AB8100AAEF07 /* Build configuration list for PBXNativeTarget "agv" */ = {
 			isa = XCConfigurationList;
@@ -2643,6 +2650,7 @@
 				96835C4A1DA0AB8100AAEF07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9692AFC41D6D322E002D740C /* Build configuration list for PBXProject "ocday02" */ = {
 			isa = XCConfigurationList;

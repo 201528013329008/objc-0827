@@ -33,4 +33,4 @@ int main(void)
         printf("%s\n", list[ x]);
     return 0;
 }
-
+//电风扇哥哥哥哥哥哥哥哥哥哥哥哥

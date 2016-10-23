@@ -13,4 +13,21 @@
     NSLog(@"jiayou");}
 -(void)sayWithName:(NSString *)name{
     NSLog(@"%@ jiayou",name);}
+-(NSString *)description{
+    return [NSString stringWithFormat:@"age = %i",self.age];
+}
+
+-(void)StudentWithSex:(Sex)sex{
+
+    switch (sex) {
+        case 0:
+            NSLog(@"man");
+            break;
+                  case 1:
+            NSLog(@"woman");
+                        break;
+    }
+}
+
+
 @end

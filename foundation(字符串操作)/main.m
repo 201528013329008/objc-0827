@@ -155,7 +155,7 @@ int main(int argc, const char * argv[]) {
     NSCharacterSet *set = [NSCharacterSet punctuationCharacterSet];
                     
    NSString*newStr13 = [str13  stringByTrimmingCharactersInSet:set   ];
-    NSLog(@"%@",newStr13);
+    NSLog(@"%@",newStr13);   
     
   
     
@@ -175,6 +175,7 @@ int main(int argc, const char * argv[]) {
     NSLog(@"%i",ab);
     
 //    并没有真实的操作文件
+    
 
 //    获取文件目录的最后一个目录（相当于从后面找／（rangeOfString:@"\" options:NSBackwardsSearch）然后substringFromIndex）
     
@@ -183,6 +184,7 @@ int main(int argc, const char * argv[]) {
     
 //    删除最后一个目录
     NSString *newStr244 = [str24 stringByDeletingLastPathComponent];
+
     NSLog(@"%@",newStr244);
     
 //    给文件添加一个目录
@@ -401,6 +403,9 @@ int main(int argc, const char * argv[]) {
     Person*p1 = [[Person alloc]init];
     Person*p2 = [[Person alloc]init];
     Person*p3 = [[Person alloc]init];
+    p1.age =1;
+    p2.age =2;
+    p3.age =4;
     
     NSArray *selarr = @[p1,p2,p3];
 //    让所有对象执行方法
@@ -410,9 +415,32 @@ int main(int argc, const char * argv[]) {
     }];
 //   2
     [selarr makeObjectsPerformSelector:@selector(say)];
+
     
 //    只能传递一个参数，多个参数需要遍历enumerateObjectsUsingBlock
     [selarr makeObjectsPerformSelector:@selector(sayWithName:) withObject:@"ljy"];
+   
+    
+//     withObject，需要传递的参数
+    
+//    sort,OC对象，不能是自定义的对象
+    NSArray *arr1= @[@10,@2,@9,@11];
+    NSArray *newArr= [arr1 sortedArrayUsingSelector:@selector(compare:)];
+//    compare：不支持自定义（某属性）的对象
+    NSLog(@"%@",newArr);
+    
+    
+
+//  默认按照升序  二分法
+    //不可变的数组需要找对象进行接收
+//    opts 为0或1 是指定排序的某个条件（是否并发和稳定）
+  NSArray *newSel =  [selarr sortedArrayWithOptions:NSSortStable usingComparator:^NSComparisonResult(Person *obj1, Person  *obj2) {// 每次调用该block 都会选出两个元素进行比较
+      
+        return obj1.age> obj2.age ;
+        
+    }];
+    
+    NSLog(@"%@",newSel);
     
     
     
@@ -422,21 +450,241 @@ int main(int argc, const char * argv[]) {
     
     
     
+    NSArray *array = [NSArray arrayWithObjects:@"123",@"21",@"33",@"69",@"108",@"256", nil];
+    NSArray *resultArray = [array sortedArrayWithOptions:NSSortConcurrent usingComparator:^NSComparisonResult(id obj1, id obj2) {
+        int nu1 = [obj1 intValue];
+        int nu2 = [obj2 intValue];
+    
+////        if (nu1 > nu2) {
+////            return NSOrderedDescending;
+////        }else if (nu1 == nu2){
+////            return NSOrderedSame;
+////        }else{
+////            return NSOrderedAscending;
+////        }同义语下句
+        return nu1>nu2;
+    }];
+//    NSArray *newArr1= [array sortedArrayUsingSelector:@selector(compare:)];
+    NSLog(@"%@",resultArray);
+    
+    NSArray *array10 = [NSArray arrayWithObjects:@"123",@"21",@"33",@"69",@"108",@"256", nil];
+    NSArray *resultArray1 = [array10 sortedArrayWithOptions:NSSortConcurrent usingComparator:^NSComparisonResult(id obj1, id obj2) {
+        int nu1 = [obj1 intValue];
+        int nu2 = [obj2 intValue];//如果没有这两句那么按照ascii码表排序
+        //        if (nu1 > nu2) {
+        //            return NSOrderedDescending;
+        //        }else if (nu1 == nu2){
+        //            return NSOrderedSame;
+        //        }else{
+        //            return NSOrderedAscending;
+        //        }
+              return nu1<nu2;
+//        return [obj1 compare:obj2];
+    }];
+    NSLog(@"%@",resultArray1);
     
     
     
     
     
+//    字符串数组转字符串
+    NSArray *arr3 = @[@"liu",@"jing",@"yi"];
+//    join
+//    1
+    NSMutableString *strM1= [NSMutableString string ];
     
+    for (NSString *strliu in arr3) {
+        [strM1 appendString:strliu];
+        [strM1 appendString:@"-"];
+      
+    }
+   [strM1 deleteCharactersInRange:NSMakeRange(strM1.length-1, 1)];
+    
+    NSLog(@"%@",strM1);
+    
+//    2
+    NSString *str40 = [arr3 componentsJoinedByString:@"-----"];
+    NSLog(@"%@",str40);
+   
+    
+//    可逆  字符串转数组
+    NSString *str41 = @"liu-jing-yi";
+    NSArray *arr41 = [str41 componentsSeparatedByString:@"-"];
+    NSLog(@"%@",arr41);
     
     
   
     
     
+//    nsarray  write read  writeToFile只能写数组中保存的元素都是fd框架中的类创建的对象，自定义对象不能写入
+//    本质是写写入了一个xml文件 ，将XML文件的扩展名保存为plist
+     NSArray *arr4 = @[@"liu",@"jing",@"yi"];
+    BOOL flag1= [arr4 writeToFile:@"/Users/a691/Desktop/arr4.plist" atomically:YES];
+    //习惯将xml保存为plist扩展名文件，查看器
+    NSLog(@"%i",flag1);
     
-    return 0;
     
     
+    NSArray *newArray2 = [NSArray arrayWithContentsOfFile:@"/Users/a691/Desktop/arr4.plist"];
+    NSLog(@"%@",newArray2);
+    
+    
+    NSMutableArray *arrM = [NSMutableArray array ];
+    
+    //    写代码插入的一定是一个数组格式，实际可能插入整个数组，或将数组元素取出单独插入
+    [arrM addObject:@"aaa"];
+     [arrM addObject:@[@"lll",@"dfs"]];//将整体作为一个元素插入
+    [arrM addObjectsFromArray:@[@"lll",@"dfs"]];//将每一个元素取出插入
+    
+    
+    
+    [arrM insertObject:@"lkj" atIndex:1];//到指定位置
+
+    NSIndexSet *set3 = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(2, 2)];
+    
+
+    [arrM insertObjects:@[@"a",@"b"] atIndexes: set3];
+    NSLog(@"%@",arrM);
+ 
+    
+    [arrM removeObjectAtIndex:0];
+    [arrM replaceObjectAtIndex:0 withObject:@"re"];//等同arrM[0] = @"re";
+    [arrM removeLastObject];
+    [arrM removeObject:@"a"];
+      NSLog(@"%@",arrM[0]);
+     NSLog(@"%@",arrM);
+    
+//    不能快速创建可变数组或字符串，如果吧一个不可变当可变来使用，触发运行时错误
+//    NSMutableArray *arrMMM = @[@"d",@"dsf"];
+//    [arrMMM addObject:@"dsfds"]
+    
+    //    NSMutableString *str310 =@"dsf";
+    //
+    //    [str310 setString:@"dsf"];
+    //    NSLog(@"%@",str310);
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    key value 11 对应
+    NSDictionary *dict = [NSDictionary dictionaryWithObjects:@[@"ga",@"55"] forKeys:@[@"0",@"1"]];
+    NSLog(@"%@ %@",[dict objectForKey:@"0"],[dict objectForKey:@"1"]);
+    
+//    NSDictionary *dict1 = @{key :value }快速创建
+    
+    NSDictionary *dict1 = @{@"name":@"ljy",@"height":@"175"};
+    NSLog(@"%@ %@",dict1[@"name"],dict1[@"height"]);
+    
+    
+    
+    
+    
+    
+    
+NSLog(@"count = %lu",dict1.count);
+    //dictionary traversal
+//    如何获取key value的个数，键和值
+//1不用
+//    NSArray *keys = dict1.allKeys;//取出所有Key
+//    
+//    for (int i=0; i<dict1.count; i++){
+//        NSString *key= keys[i];
+//        NSString *value = dict1[key];
+//        NSLog(@"%@ %@",key,value );
+//    }
+//    2,增强for,   通过增强for  可以将所有的key取出敷值给obj(也不用)
+//    for (NSString *key2    in dict1) {
+////        NSLog(@"%@",key2);
+//        NSString *value2 = dict1[key2];
+//        NSLog(@"%@ %@",key2 ,value2);
+//    }
+//    3.迭代器
+    [dict1 enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        NSLog(@"%@ %@",key ,obj);
+    }];
+    
+    NSDictionary *dict2 = @{@"name":@"ljy",@"weight":@"65"};
+    [dict2 enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        NSLog(@"%@ %@",key ,obj);
+    }];
+    
+//    字典无序
+    
+    [dict2 writeToFile:@"/Users/a691/Desktop/dict2.plist" atomically:1];
+
+    NSDictionary *newDict2 = [NSDictionary dictionaryWithContentsOfFile:@"/Users/a691/Desktop/dict2.plist"];
+    NSLog(@"%@",newDict2);
+    
+    
+    
+    
+    
+//    不能通过@{},创建可变字典
+//    不可变字典 key不能相同（后面的key对应的值不能够保存），
+//    可变字典后面的key对应的值会覆盖前面的值
+    
+    
+    
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    [dictM setObject:@"ljyy" forKey:@"name"];
+    NSLog(@"%@" ,dictM);
+    [dictM setValuesForKeysWithDictionary:@{@"name1":@"ljy1",@"name2":@"ljy2"}];
+    NSLog(@"%@",dictM);
+    
+    [dictM setValue:@"ljy20" forKey:@"name2"];//等价于dictM[@"name2"]= @"ljy"
+    
+    [dictM removeObjectForKey:@"name2"];
+    
+    NSLog(@"%@",dictM);
+    NSLog(@"name1= %@", dictM[@"name1"]);
+    
+    
+    
+    
+    
+//    nspoint cgpoint
+//    NSSize CGSize
+//NSRect  CGRect  Other name,规范用CG结构体
+//    CGPoint point = NSMakePoint(10, 10  );
+//    CGSize size = NSMakeSize(10, 10);//尺寸
+//    
+////    同时保存坐标和尺寸
+//    CGRect rect = NSMakeRect(10, 10, 10, 10);
+//    
+//    
+    
+    
+    
+    
+
+    
+    NSInteger age = 10;
+    double number= 1.5144;
+    float value = 9.99f;
+    
+    //    将基本数据类型包装成对象类型 才能传入对象（数组）
+//   NSNumber *ageN = [NSNumber numberWithInt:age];
+     NSNumber *ageN = [NSNumber numberWithInteger:age];
+    NSNumber *numberN = [NSNumber numberWithDouble:number];
+    NSNumber *valueN = [NSNumber numberWithFloat:value];
+    NSArray  *arrN = @[ageN, numberN ,valueN];
+    NSLog(@"%@",arrN);
+    
+//   （简写） 如果传入的是变量，@() ，若是常量去掉（）
+    NSNumber* temp2 =@(number);
+    NSNumber*temp1 = @(age);
+    NSNumber *temp3 = @(value);
+    NSArray  *arrN1 = @[temp1,temp2,temp3];
+    NSLog(@"%@",arrN1);
     
     
     
@@ -445,5 +693,217 @@ int main(int argc, const char * argv[]) {
     
     
 
+    
+    //    将对象类型转换为基本数据类型，可以取出
+    int temp4 = [ageN intValue];
+    double temp5 = [numberN doubleValue];
+    float temp6 = [valueN floatValue];
+    
+    NSLog(@"%i %f %f",temp4,temp5,temp6);
+    
+    
+    
+    
+    
+//    nsvalue包装常用结构体
+    CGPoint  point2= NSMakePoint(10, 10);
+    NSValue *arrPoint = [NSValue valueWithPoint:point2];
+    
+    NSArray *arrTest = @[arrPoint];
+    NSLog(@"%@",arrTest);
+//    nsvalue的一个子类是nsnumber
+//    NSValue可以包装任意类型
+// 包装自定义的结构体
+    
+    typedef struct{
+        int age;
+        char *name;
+        double height;
+    } Ren;
+    
+    Ren p = {20,"ljy",1.77};
+//    valueWithBytes接受一个指针传递需要包装的结构体的变量的地址
+//    objCType船传递需要包装的数据类型
+    NSValue *pValue = [NSValue valueWithBytes:&p objCType:@encode(Ren)];
+//    NSArray *renArr = @[pValue];
+//    NSLog(@"%@",renArr);
+//
+    
+    Ren res ;
+    [pValue getValue:&res];
+    NSLog(@"%i %s %f",res.age, res.name ,res.height);
+    
+    
+    
+    
+    
+    
+    
+    Person *s = [[Person alloc]init];
+   s.birthday= (Date){2015,1,1};
+//    Date s= {2015,1,1};
+  
+    
+ s.age = 1;
+ //    设置枚举的值
+  s.sex= 1;
+[s StudentWithSex:s.sex];
+    
+//       NSLog(@"%i",s.sex);
+    Date  p11 = {2015,3,1};
+    NSValue *pValue1 = [NSValue valueWithBytes:&p11 objCType:@encode(Date)];
+//    NSArray *renArr1 = @[pValue1];
+//    NSLog(@"%@",renArr1);格式是地址 取出来验证一下
+
+    
+    Date res1 ;//临时地址
+    [pValue1 getValue:&res1];
+    NSLog(@"%i %i %i",res1.year , res1.month ,res1.day);
+    
+    
+    
+    
+    
+    
+    
+//    date方法创建的对象直接保存了当前的时间
+    NSDate *now = [NSDate date];  //NSDate不可变
+    NSTimeZone *zone = [NSTimeZone  systemTimeZone];
+    NSUInteger  seconds = [zone secondsFromGMTForDate:now];
+     NSDate *now1 = [now dateByAddingTimeInterval:seconds];//seconds
+    NSLog(@"%@",now1);
+    
+    
+    
+    
+    
+    
+//    time formatting   nsdate->nsstring
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"yyyy年MM月dd日 HH时 mm分 ss秒 Z";
+    
+    NSString *res2 = [formatter stringFromDate:now];
+ 
+    NSLog(@"%@",res2);
+    
+    
+    
+    
+//    nsstring->nsdate
+    
+    NSString*strTime = @"2016年10月20日 11时 26分 20秒 +0800";
+    
+    NSDate *date = [formatter dateFromString:strTime];
+    
+    NSLog(@"%@",date);//自动转化为+oooo
+//    如果是从nsstring转换成nsdate    那么datematter的格式必须和字符串的格式一样才可以，不然参数传递不过来
+    
+    
+    
+//    get year
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];//单个获取
+    NSCalendarUnit typeEnum = NSCalendarUnitYear |
+                                            NSCalendarUnitMonth |
+                                              NSCalendarUnitDay |
+                                                NSCalendarUnitHour |
+                                            NSCalendarUnitMinute |
+                                            NSCalendarUnitSecond ;
+    NSDateComponents  *unitYear=  [cal components: typeEnum fromDate:now];
+    
+    NSLog(@"%ld",unitYear.year);
+     NSLog(@"%ld",unitYear.month);
+    
+    NSLog(@"%ld",unitYear.day);
+    NSLog(@"%ld",unitYear.hour);
+    
+    NSLog(@"%ld",unitYear.minute);
+    NSLog(@"%ld",unitYear.second);
+    
+    
+//    比较差值
+    
+    NSDateComponents *cmps=   [cal  components:typeEnum fromDate:date toDate:now options:0];
+    NSLog(@"%ld %ld", cmps.hour,cmps.minute );
+    
+    
+    
+//     NSLog(@"%@",now);
+    
+    
+//    单例   创建出来的对象（只有一个）由全局共享，指向同一块存储空间，同一个对象被拿到
+    
+//    isExist
+    NSFileManager *manager = [NSFileManager defaultManager];
+  BOOL flag3=   [manager fileExistsAtPath:@"/Users/a691/Desktop/0816"];
+    
+    NSLog(@"%i",flag3);
+//    isExist  and isDirectory
+    BOOL dir = 0;
+    BOOL flag4= [manager fileExistsAtPath:@"/Users/a691/Desktop/0816" isDirectory:&dir];
+    
+    NSLog(@"%i %i",flag4, dir);
+    
+    
+    
+    
+    
+    
+//    获取文件夹的属性
+    NSDictionary *info = [NSDictionary dictionary ];
+    info =  [manager attributesOfItemAtPath:@"/Users/a691/Desktop/0816" error:nil];
+    NSLog(@"%@",info);
+    
+    
+    
+//    获取文件夹中所有文件 只能获得下一层的文件
+//    error可以监听是否获取成功,方便弹窗提醒
+    NSError *error = nil;
+   NSArray *arr42= [manager contentsOfDirectoryAtPath:@"/Users/a691/Desktop/0816"  error:nil];
+    if(error ==nil){
+        NSLog(@"%@ ",arr42);}else{
+            NSLog(@"nima");}
+//获取所有的子文件；
+//    NSArray *arr43 = [manager subpathsAtPath:@"/Users/a691/Desktop/0816" ];
+//    NSArray *arr44 = [manager subpathsOfDirectoryAtPath:@"/Users/a691/Desktop/0816" error:nil];
+//    NSLog(@"%@",arr44);
+//    NSLog(@"%@",arr43);//等同
+    
+    
+    
+    
+    
+    
+//    只能用于创建文件夹，withIntermediateDirectories路径中如果出现不存在的文件夹，yes会自动创建
+    [manager createDirectoryAtPath:@"/Users/a691/Desktop/man" withIntermediateDirectories:YES attributes:nil error:nil];
+    
+//    crfile
+    
+    NSString *str45 = @"dsfz";
+    NSData *data = [str45 dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [manager createFileAtPath:@"/Users/a691/Desktop/file" contents:data attributes:nil];  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   return 0;
     
 }
